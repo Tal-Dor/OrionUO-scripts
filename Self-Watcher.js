@@ -15,28 +15,22 @@ BigBrother
 - script bezi na pozadi celou dobu nez umrete to jde zmenit v podmince -> while (!Player.Dead())
 
 */
-
 function BigBrother() {
-    var Msg = "You are frozen and can not move";
-    Orion.ClearJournal(Msg);
-    while (!Player.Dead())
-    {
-        if (Orion.InJournal(Msg, 'sys|my'))
-        {
-            Orion.ClearJournal(Msg);
-            Orion.CharPrint('self', 0x0026, '**PARALYZED**');
-		    Orion.Cast('Magic Arrow', self);
-            Orion.Wait(2500);
-            Orion.ClearJournal(Msg);
-        }
-        if (Player.Poisoned())
-        {
-          Orion.CharPrint('self', 0x0026, '**POISONED**');
-          Orion.Wait(2500);
-        }
-        else
-        {
-            Orion.Wait(100);
-        }
+  var Msg = "You are frozen and can not move";
+  Orion.ClearJournal(Msg);
+  while (!Player.Dead()) {
+    if (Orion.InJournal(Msg, 'sys|my')) {
+      Orion.ClearJournal(Msg);
+      Orion.CharPrint('self', 0x0026, '**PARALYZED**');
+      Orion.Cast('Magic Arrow', self);
+      Orion.Wait(2500);
+      Orion.ClearJournal(Msg);
     }
+    if (Player.Poisoned()) {
+      Orion.CharPrint('self', 0x0026, '**POISONED**');
+      Orion.Wait(2500);
+    } else {
+      Orion.Wait(100);
+    }
+  }
 }

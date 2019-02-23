@@ -18,7 +18,6 @@ TargetNextEnemy_PvP()
 AttackLastTarget()
 
 */
-
 function FindNearestEnemy_PvM(a) //subfunction
 {
   //timer rest idea from Caleb
@@ -155,11 +154,8 @@ function TargetNextEnemy_PvP() {
   }
 }
 
-
-
-function AttackLastTarget()
-{
-	Orion.ClientLastTarget('lasttarget');
-	Orion.TargetSystemSerial('lasttarget');
-	Orion.CharPrint('lasttarget', 0x17, '>>> Attack: ' +  Orion.RequestName(lasttarget, 500) + ' <<<');
+function AttackLastTarget() {
+  Orion.ClientLastTarget('lasttarget');
+  Orion.TargetSystemSerial('lasttarget');
+  Orion.CharPrint('lasttarget', 0x17, '>>> Attack: ' + Orion.RequestName(lasttarget, 500) + ' <<<');
 }

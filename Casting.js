@@ -33,49 +33,38 @@ var MagicReflection_scroll = '0x1F50';
 var GreaterHeal_scroll = '0x1F49';
 
 */
-
-function KVF_scroll()
-{
-    var FlameStrike_scroll = '0x1F5F';
-    if (Orion.Count(FlameStrike_scroll) <1)
-    {
-        Orion.Print("Flame Strike Scroll = 0");
-    }
-    if (Player.Mana()<10)
-    {
-        Orion.Print ("Not enough mana!");
-        return;
-    }
-    Orion.WaitTargetObject(lasttarget);
-    if (Orion.Count(FlameStrike_scroll) != 0)
-    {
-        Orion.UseType(FlameStrike_scroll);
-    }
-    else
-    {
-        Orion.Print ("Scrolls not found, cast from Book");
-        Orion.Cast('Flame Strike');
-    }
+function KVF_scroll() {
+  var FlameStrike_scroll = '0x1F5F';
+  if (Orion.Count(FlameStrike_scroll) < 1) {
+    Orion.Print("Flame Strike Scroll = 0");
+  }
+  if (Player.Mana() < 10) {
+    Orion.Print("Not enough mana!");
+    return;
+  }
+  Orion.WaitTargetObject(lasttarget);
+  if (Orion.Count(FlameStrike_scroll) != 0) {
+    Orion.UseType(FlameStrike_scroll);
+  } else {
+    Orion.Print("Scrolls not found, cast from Book");
+    Orion.Cast('Flame Strike');
+  }
 }
 
-function self_gh()
-{
-    var GreaterHeal_scroll = '0x1F49';
-    if (Orion.Count(GreaterHeal_scroll) <1)
-    {
-        Orion.Print("GH Scroll = 0");
-    }
-    if (Player.Mana()<10)
-    {
-        Orion.Print ("Not enough mana!");
-        return;
-    }
-    Orion.WaitTargetObject(self);
-    if (Orion.Count(GreaterHeal_scroll) != 0)
-        Orion.UseType(GreaterHeal_scroll);
-    else
-    {
-        Orion.Print ("Scrolls Not Found, cast from Book");
-        Orion.Cast('Greater Heal');
-    }
+function self_gh() {
+  var GreaterHeal_scroll = '0x1F49';
+  if (Orion.Count(GreaterHeal_scroll) < 1) {
+    Orion.Print("GH Scroll = 0");
+  }
+  if (Player.Mana() < 10) {
+    Orion.Print("Not enough mana!");
+    return;
+  }
+  Orion.WaitTargetObject(self);
+  if (Orion.Count(GreaterHeal_scroll) != 0)
+    Orion.UseType(GreaterHeal_scroll);
+  else {
+    Orion.Print("Scrolls Not Found, cast from Book");
+    Orion.Cast('Greater Heal');
+  }
 }
