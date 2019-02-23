@@ -20,12 +20,15 @@ PetCommander('Stop');
 PetCommander('Go');
 etc..
 
-Kill_Watcher:
+KillWatcher:
 - posle vsechny vase pety zabit vas target, hlida dokud cil neni mrtvy a okamzite je zastavi press "All Stop"
 jakmile target umre, vhodne hlavne pro nekro summony jako Death Vortex a podobne neposlusne summy kteri si na DP
 delaji co chcou pokud nedostanou po kill nejaky jiny prikaz :P
 - pokud se nepouziva dohromady s PvM/PvP target scriptem ktery pouziva global_enemy, je potreba zmenit var Target
 
+Pouziti:
+Hotkey -> Run script :
+KillWatcher();
 */
 function Renamer() {
   var NamesPool = ['Andres', 'Blanca', 'Carlos', 'Dolores', 'Enrique', 'Felicia', 'Guillermo', 'Hilda', 'Ignacio', 'Jimena', 'Kevin', 'Linda', 'Marty', 'Nora', 'Olaf', 'Damrey',
@@ -169,32 +172,27 @@ function PetCommander(command) {
   TargetHelper = 0;
 }
 
-function Kill_Watcher() {
-  QQQ: var KillText = 'Kill :::';
-  if (Orion.GetGlobal('Kill_Watcher_loop') == 1) {
-    Orion.Print('Target not dead yet,killing old loop');
-    Orion.SetGlobal('Kill_Watcher_loop', 0);
-    Orion.Terminate('Kill_Watcher');
-  }
+function KillWatcherSub() {
   var Target = Orion.FindObject(Orion.GetGlobal('global_enemy'));
   if (Target) {
-    var DeadCheck = Target.Exists();
-    var DistanceCheck = Orion.GetDistance(Orion.GetGlobal('global_enemy'));
-    if (DistanceCheck < 18) {
-      PetCommander('Kill');
-    } else {
-      Orion.Print('target is out of range!!');
-      return;
-    }
-    Orion.Wait(500);
-    while ((DeadCheck) && (Orion.InJournal(KillText, 'sys|my'))) {
-      Orion.SetGlobal('Kill_Watcher_loop', 1);
-      DeadCheck = Target.Exists();
-      Orion.Wait('10');
-    }
-    Orion.ClearJournal(KillText);
-    Orion.SetGlobal('Kill_Watcher_loop', 0);
-    PetCommander('Stop');
+    PetCommander('Kill');
+  }
+  Orion.Wait(500);
+  while (Target.Exists()) {
+    Orion.SetGlobal('KillWatcher_loop', 1);
+    Orion.Wait(100);
+  }
+  Orion.SetGlobal('KillWatcher_loop', 0);
+  PetCommander('Stop');
+}
 
+function KillWatcher() {
+  if (Orion.GetGlobal('KillWatcher_loop') == 1) {
+    //Orion.Print('Target not dead yet,restarting loop');
+    Orion.Terminate('KillWatcherSub');
+    Orion.SetGlobal('KillWatcher_loop', 0);
+    Orion.Exec('KillWatcherSub');
+  } else {
+    Orion.Exec('KillWatcherSub');
   }
 }
