@@ -1,19 +1,18 @@
-/*
-
 ////////////////////////////////////////////////////////////////////////////////
 //                             ~ Potion Manager ~                             //
 //                             - Taldor / Quin -                              //
 ////////////////////////////////////////////////////////////////////////////////
+//
+// Univerzalni script na pouzivani vsech druhu potionu.Sam si i nacepuje a vypije
+// pokud mas u sebe kad.
+//
+// Pouziti:
+// Hotkey -> External code :
+// Potion_Manager('tmr');	=> vypije TMR, pokud uz zadna neni, cepne z kade 1 a vypije
+// Potion_Manager('tmr', 1); => jen docepuje TMR z kade do flasky tu necha v baglu ale NEPIJE
+//
+////////////////////////////////////////////////////////////////////////////////
 
-Univerzalni script na pouzivani vsech druhu potionu.Sam si i nacepuje a vypije
-pokud mas u sebe kad.
-
-Pouziti:
-Hotkey -> External code :
-Potion_Manager('tmr');	=> vypije TMR, pokud uz zadna neni, cepne z kade 1 a vypije
-Potion_Manager('tmr', 1); => jen docepuje TMR z kade do flasky tu necha v baglu ale NEPIJE
-
-*/
 function Potion_Manager(Potion, Refill) {
   if (Refill) {
     var SmartSwitch = Potion_Refill;

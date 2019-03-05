@@ -1,35 +1,35 @@
-/*
-
 ////////////////////////////////////////////////////////////////////////////////
 //                               ~ Pet Master ~                               //
 //                             - Taldor / Quin -                              //
 ////////////////////////////////////////////////////////////////////////////////
+//
+// Univerzalni script prejmenovani a celkove ovladani petu.
+//
+// Pouziti:
+//
+// Renamer:
+// - prejmenuje vsechny pety + summony ktere vlastnite v urcitem radiusu, nahodne jmena bere z NamesPool
+// - bud primo na hotkey (run script) nebo mozno pouzit i v summon creature makru Renamer();
+//
+// PetCommander:
+// Hotkey -> External code :
+// PetCommander('Come');
+// PetCommander('Stop');
+// PetCommander('Go');
+// etc..
+//
+// KillWatcher:
+// - posle vsechny vase pety zabit vas target, hlida dokud cil neni mrtvy a okamzite je zastavi press "All Stop"
+// jakmile target umre, vhodne hlavne pro nekro summony jako Death Vortex a podobne neposlusne summy kteri si na DP
+// delaji co chcou pokud nedostanou po kill nejaky jiny prikaz :P
+// - pokud se nepouziva dohromady s PvM/PvP target scriptem ktery pouziva global_enemy, je potreba zmenit var Target
+//
+// Pouziti:
+// Hotkey -> Run script :
+// KillWatcher()
+//
+////////////////////////////////////////////////////////////////////////////////
 
-Univerzalni script prejmenovani a celkove ovladani petu.
-
-Pouziti:
-
-Renamer:
-- prejmenuje vsechny pety + summony ktere vlastnite v urcitem radiusu, nahodne jmena bere z NamesPool
-- bud primo na hotkey (run script) nebo mozno pouzit i v summon creature makru Renamer();
-
-PetCommander:
-Hotkey -> External code :
-PetCommander('Come');
-PetCommander('Stop');
-PetCommander('Go');
-etc..
-
-KillWatcher:
-- posle vsechny vase pety zabit vas target, hlida dokud cil neni mrtvy a okamzite je zastavi press "All Stop"
-jakmile target umre, vhodne hlavne pro nekro summony jako Death Vortex a podobne neposlusne summy kteri si na DP
-delaji co chcou pokud nedostanou po kill nejaky jiny prikaz :P
-- pokud se nepouziva dohromady s PvM/PvP target scriptem ktery pouziva global_enemy, je potreba zmenit var Target
-
-Pouziti:
-Hotkey -> Run script :
-KillWatcher();
-*/
 function Renamer() {
   var NamesPool = ['Andres', 'Blanca', 'Carlos', 'Dolores', 'Enrique', 'Felicia', 'Guillermo', 'Hilda', 'Ignacio', 'Jimena', 'Kevin', 'Linda', 'Marty', 'Nora', 'Olaf', 'Damrey',
     'Haikui', 'Kirogi', 'Tembin', 'Bolaven', 'Sanba', 'Jelawat', 'Ewiniar', 'Malaksi', 'Gaemi', 'Prapiroon', 'Maria', 'SonTinh', 'Bopha', 'Wukong', 'Sonamu',

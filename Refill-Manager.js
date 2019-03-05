@@ -2,7 +2,7 @@
 //                             ~ Refill Manager ~                             //
 //                             - Taldor / Quin -                              //
 ////////////////////////////////////////////////////////////////////////////////
-
+//
 // RefillManager:
 // Doplni itemy do baglu kterej si vyberes targetem nezpomenout na zacatku scriptu
 // v sekci NASTAVENI mnozstvi u jednotlivych veci kdo si chce pohrat muze si
@@ -27,7 +27,7 @@
 // pokud chces nastavit nove ID nejakyho refill batohu tak v Orion assistant:
 // zalozka List -> Objects a bud vybrat novy serial ID zde manualne nebo object
 // vymazat a pri pristim pusteni scriptu se zepta na novy bagl automaticky.
-
+//
 // RefillManagerConfig:
 // --- pro pokrocilejsi uzivatele:
 // Pokud ti nejaky item ci cela sekce chybi pouzij tento RMC(RefillManagerConfig) script
@@ -47,15 +47,16 @@
 // Pozn : script neumi (zatim) offset usporadani stejneho typu itemu vedle sebe
 // tim myslim ze kdyz mas napriklad 5 GC potionu tak je nedokaze dat X-X-X-X-X
 // ale budou vsechny naskladane na sobe podle X,Y souradnice v 'var Items'.
-
+//
 // SaveCheck:
 // sub-funkce pro world save check, nepousti se samotne :P
-
-
+//
 // Pouziti:
 // Hotkey -> Run script :
 // RefillManager()
 // RefillManagerConfig()
+//
+////////////////////////////////////////////////////////////////////////////////
 
 function RefillManager() {
   // ------------ NASTAVENI - CTI popis u kazdeho 'var' ! ------------ //

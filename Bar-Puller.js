@@ -1,19 +1,18 @@
-/*
-
 ////////////////////////////////////////////////////////////////////////////////
 //                              ~ Bar Puller ~                                //
 //                             - Taldor / Quin -                              //
 ////////////////////////////////////////////////////////////////////////////////
+//
+// Vytahne status bary nepratel a posklada je na obrazovce, je nutne upravit
+// radek 27 popr 46  X,Y souradnice kde to ma zacinat (1185, 680 a 0, 560)
+//
+// Pouziti:
+// Hotkey -> Run script :
+// BarPuller_PvP()
+// BarPuller_PvM()
+//
+////////////////////////////////////////////////////////////////////////////////
 
-Vytahne status bary nepratel a posklada je na obrazovce, je nutne upravit
-radek 30 popr 49  X,Y souradnice kde to ma zacinat (1185, 680 a 0, 560)
-
-Pouziti:
-Hotkey -> Run script :
-BarPuller_PvP()
-BarPuller_PvM()
-
-*/
 function BarPuller_PvP() {
   var noto = Player.Notoriety();
   Orion.Ignore(self, true);

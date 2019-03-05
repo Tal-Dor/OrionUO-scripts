@@ -1,31 +1,29 @@
-/*
-
 ////////////////////////////////////////////////////////////////////////////////
 //                               ~ Autoloot ~                                 //
 //                             - Taldor / Quin -                              //
 ////////////////////////////////////////////////////////////////////////////////
-
-Autoloot vsech tel kolem sebe, pouziva lootlist kde se nastavi pouze veci co chcete lootit,
-popripade jde pouzit ignorelist, jde zapnout i skinning
-
-Pouziti:
-Hotkey -> Run script :
-AutoLoot()
-
-do 'lootlist' popripade do 'ignorelist' pokud chcete pouzivat loot all je potreba
-pridat veci ktere (ne)chcete lootit napr pro DP:
-Graphic: 0x0E76  Color: 0x049A Comment: Loot
-
-takze list content bude v ty zalozce vypadat takhle:
-
-0x0E76 : 0x049A //Loot
-0x0E80 : 0x0123 //Dark Chest of Wonders
-0x1F13 : 0x0B87 //Skillpoint 1
-0x1F13 : 0x0026 //Skillpoint 2
-0x1F13 : 0x0005 //Skillpoint 3
-0x1F13 : 0x0054 //Skillpoint 4
-
-*/
+//
+// Autoloot vsech tel kolem sebe, pouziva lootlist kde se nastavi pouze veci co chcete lootit,
+// popripade jde pouzit ignorelist, jde zapnout i skinning
+//
+// Pouziti:
+// Hotkey -> Run script :
+// AutoLoot()
+// 
+// do 'lootlist' popripade do 'ignorelist' pokud chcete pouzivat loot all je potreba
+// pridat veci ktere (ne)chcete lootit napr pro DP:
+// Graphic: 0x0E76  Color: 0x049A Comment: Loot
+//
+// takze list content bude v ty zalozce vypadat takhle:
+//
+// 0x0E76 : 0x049A //Loot
+// 0x0E80 : 0x0123 //Dark Chest of Wonders
+// 0x1F13 : 0x0B87 //Skillpoint 1
+// 0x1F13 : 0x0026 //Skillpoint 2
+// 0x1F13 : 0x0005 //Skillpoint 3
+// 0x1F13 : 0x0054 //Skillpoint 4
+//
+////////////////////////////////////////////////////////////////////////////////
 function AutoLoot() {
   //1 - loot all; 0 - loot prioritized items
   var all = 0;

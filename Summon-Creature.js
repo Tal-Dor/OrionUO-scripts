@@ -1,20 +1,19 @@
-/*
-
 ////////////////////////////////////////////////////////////////////////////////
 //                            ~ Summon Creature ~                             //
 //                             - Taldor / Quin -                              //
 ////////////////////////////////////////////////////////////////////////////////
+//
+// Vykouzleni summonu pres WaitMenu vcetne pouziti Renamer();
+//
+// Pouziti:
+// Hotkey -> Run script :
+// Summon_Oclock()
+// Summon_DVortex()
+// Scorpion()
+// etc..
+//
+////////////////////////////////////////////////////////////////////////////////
 
-Vykouzleni summonu pres WaitMenu vcetne pouziti Renamer();
-
-Pouziti:
-Hotkey -> Run script :
-Summon_Oclock
-Summon_DVortex
-Scorpion
-etc..
-
-*/
 function Summon_Oclock() {
   Orion.CancelWaitMenu();
   Orion.WaitMenu('What do you want to summon', 'Dark Oclock');

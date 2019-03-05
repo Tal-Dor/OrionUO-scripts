@@ -1,23 +1,22 @@
-/*
-
 ////////////////////////////////////////////////////////////////////////////////
 //                               ~ Targeting ~                                //
 //                             - Taldor / Quin -                              //
 ////////////////////////////////////////////////////////////////////////////////
+//
+// PvP a PvM targetovaci script
+// -Script se po 800ms resetuje, cas se da nastavit: var resetTime = 800;
+// -PvM script targetuje vsechny NON-HUMAN gray/red enemy, ignoruje vsechny vase summony a pety
+// -PvP script targetuje vsechny humany (na DP bude nejspis nutno pozmenit kvuli vampum a nebo na jejich targetovani pouzivat PvM verzi to stejny plati o morfech)
+// -AttackLastTarget nastavi client a system target na lasttarget a vypise nad jeho hlavou >>> Attack: Jmeno <<<
+//
+// Pouziti:
+// Hotkey -> Run script :
+// TargetNextEnemy_PvM()
+// TargetNextEnemy_PvP()
+// AttackLastTarget()
+//
+////////////////////////////////////////////////////////////////////////////////
 
-PvP a PvM targetovaci script
--Script se po 800ms resetuje, cas se da nastavit: var resetTime = 800;
--PvM script targetuje vsechny NON-HUMAN gray/red enemy, ignoruje vsechny vase summony a pety
--PvP script targetuje vsechny humany (na DP bude nejspis nutno pozmenit kvuli vampum a nebo na jejich targetovani pouzivat PvM verzi to stejny plati o morfech)
--AttackLastTarget nastavi client a system target na lasttarget a vypise nad jeho hlavou >>> Attack: Jmeno <<<
-
-Pouziti:
-Hotkey -> Run script :
-TargetNextEnemy_PvM()
-TargetNextEnemy_PvP()
-AttackLastTarget()
-
-*/
 function FindNearestEnemy_PvM(a) //subfunction
 {
   //timer rest idea from Caleb
